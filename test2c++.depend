@@ -1,4 +1,5 @@
 # depslib dependency file v1.0
-1714747510 source:c:\users\midoo\desktop\test2c++\main.cpp
+1715008534 source:c:\users\midoo\desktop\test2c++\main.cpp
 	<iostream>
+	<cmath>
 

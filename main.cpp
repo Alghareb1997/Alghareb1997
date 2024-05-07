@@ -1,122 +1,99 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
-double add (double num1 , double num2)
+ void register_name(string arr[] ,string ar[],int num[]){
+    int choice;
+       for(int i=0;i<100;i++)
+            {
+        cout << "please entre name "<<endl;
+    cin >> arr[i];
+        cout << "please entre id  "<<endl;
+    cin >> ar[i];
+        cout <<"please entre room number "<<endl;
+    cin >> num[i];
+     cout << "To register anthor guest"<<endl;
+     cout  << "choice : 1 "<<endl;
+     cout   << "To end : " <<endl;
+     cout    << "choice : 2"<< endl ;
+     cin >> choice ;
+     if(choice==2){
+        break;
+     }
+   }
+ }
+ void  search_name(string  arr[] ,string name){
+     for(int i=0;i<100;i++){
+        if(arr[i]==name){
+            cout << "0ur guest"<<endl;
+           break ;
+        }
+     }
+     cout << "Not out guest " ;
+ }
+ int calc(int a ){
+     int x   ;
+     if(a==1){
+          x = a *373 ;
+     }
+     else if (a==2){
+          x = a * 587;
+     }
+     else if(a=3){
+        x  = a *756;
+     }
+     return x ;
+ }
+
+
+
+int main( )
+
 {
-   return  num1+num2 ;
 
-}
-double Minus (double num1 , double num2)
-{
-
-  return num1-num2 ;
-}
-double multiply (double num1 , double num2)
-{
-
-  return num1*num2 ;
-
-}
-double divide (double num1 , double num2)
-{
-
-
-  return num1/num2 ;
-}
-int  Modulus (int num1 , int num2)
-{
-
-  return num1%num2 ;
-}
-double add_three (double num1 , double num2, double num3)
-{
-
-  return num1+num2 +num3 ;
-}
-double minus_three (double num1, double num2, double num3)
-{
-
-  return num1-num2 -num3 ;
-}
-
-int main()
-{
     while(true)
     {
-        int Choice;
-        cout << "Choose number of function you need\n1-Add two numbers \n2-minus two numbers\n3-multiply two numbers \n4-divide two numbers \n5-modulus number \n6-Add three number \n7-minus two numbers \n0-Exit\n" ;
-        cout<<"Choice: ";
-        cin>>Choice;
-        if(Choice==1)
-        {
-            int x ,y;
-            cout << "entre two numbers" <<endl ;
-            cin >> x >> y ;
-           cout <<"Reslut is :" << add(x,y)  << endl;
+        string arr[100],ar[100];
+        int num[100];
 
+        int choice ;
 
-        }
-        else if(Choice==2)
-        {
-              int x ,y;
-              cout << "entre  two numbers" << endl;
-            cin >> x >> y ;
+        cout <<"       <<<<<<<<<<<<< <<<<<<<<<<  Welcome Paris Hotel  >>>>>>>>>> >>>>>>>>>      " <<endl;
+        cout << " choice : 1 >> for register new guest  "<< endl    ;
+        cout << " choice : 2 >> for search a guest  "<< endl;
+        cout << " choice : 3 >> for calculate trip coast "<< endl;
+        cout << " choice : 4 >> Feed back about services "<< endl;
 
-          cout << "Reslut is : " <<  Minus(x,y) <<endl;
+     cout << "please entre choice "<< endl;
+     cin >> choice ;
+     if(choice==1){
+         cout << "Welcome with Us " <<endl;
+            register_name(arr,ar,num);
+     }
+       if(choice==2){
+            string name;
+         cout  << "entre name to search" << endl;
+         cin >> name ;
+       search_name(arr,name);
+       }
+       if(choice==3){
+            double coast ;
+             int click , days ;
+        cout << " Click : 1 >> Single room coast = 373 L.E for day "<<endl;
+          cout << " Click : 2 >> Double room coast = 587 L.E for day "<<endl;
+            cout << " Click : 3 >> studio room coast = 756 L.E for day "<<endl;
+            cin >> click ;
+            cout << "How many days" << endl;
+            cin >> days ;
+            cout <<"Trip coast: "<< calc(days);
+       }
+       if(choice==4){
 
-        }
-        else if(Choice==3)
-        {
-              int x ,y;
-              cout << "entre two numbers"<< endl;
-            cin >> x >> y ;
+        cout << "How can help you"<<endl;
 
-          cout << "Reslut is : " <<  multiply(x,y) <<endl;
-        }
-        else if(Choice==4)
-        {
-              int x ,y;
-              cout << "entre two numbers" << endl;
-            cin >> x >> y ;
-            while(y==0){
-               cout << "wrong number to divide on it /y" << endl;
-               cout << "Entre anthor number"<<endl;
-                cin >> y;
-            }
-               cout << "Reslut is : " << divide(x,y) <<endl;
+       }
 
-    }
-         else if(Choice == 5){
-            int x ,y ;
-            cout << "entre two numbers"<<endl;
-            cin >> x>>y;
-            cout <<"Reslut is :" << Modulus(x,y) << endl;
-        }
-        else if(Choice==6)
-        {
-          int x , y ,z ;
-          cout << "entre three numbers" << endl;
-          cin >> x>>y>>z ;
-         cout << "Reslut is : " << add_three(x,y,z) <<endl;
-        }
-        else if(Choice==7)
-        {
-            int x , y ,z ;
-            cout << "entre three numbers" << endl;
-          cin >> x>>y>>z ;
-          cout << "Reslut is : "<< minus_three(x,y,z)<<endl;
-        }
-        else if(Choice==0)
-        {
-            //Exit
-            break;
-        }
-        else
-        {
-            cout<<"Wrong Choice";
-        }
-    }
-    cout<<endl<<"Thanks for using calculator";
     return 0;
+}
 }
